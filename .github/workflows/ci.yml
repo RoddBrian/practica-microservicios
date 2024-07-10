@@ -54,7 +54,7 @@ jobs:
 
       - name: Create tarball of the current directory
         run: |
-          tar -czf deployment-package.tar.gz .
+          tar --ignore-failed-read -czf deployment-package.tar.gz .
 
       - name: Copy tarball to EC2
         run: |
