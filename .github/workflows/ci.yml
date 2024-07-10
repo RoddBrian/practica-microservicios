@@ -46,9 +46,11 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan ec2-18-221-219-25.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
 
     - name: Copy files to EC2
       run: |
