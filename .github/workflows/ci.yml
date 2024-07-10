@@ -52,9 +52,9 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan ec2-18-221-219-25.us-east-2.compute.amazonaws.com >> ~/.ssh/known_hosts
 
-      - name: Create tarball of the current directory
+      - name: Create tarball of selected directories and files
         run: |
-          tar --ignore-failed-read -czf deployment-package.tar.gz .
+          tar -czf deployment-package.tar.gz reservations billing products docker-compose.yml
 
       - name: Copy tarball to EC2
         run: |
