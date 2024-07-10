@@ -4,17 +4,19 @@ This project consists of three microservices: a restaurant reservation service, 
 
 ## Project Structure
 
-/microservices
+```plaintext
+microservices
 ├── product-service
-│ ├── app.js
-│ ├── Dockerfile
+│   ├── app.js
+│   ├── Dockerfile
 ├── reservation-service
-│ ├── app.js
-│ ├── Dockerfile
+│   ├── app.js
+│   ├── Dockerfile
 ├── billing-service
-│ ├── app.js
-│ ├── Dockerfile
-├── docker-compose.yml
+│   ├── app.js
+│   ├── Dockerfile
+└── docker-compose.yml
+```
 
 ## Prerequisites
 
