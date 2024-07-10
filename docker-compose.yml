@@ -1,0 +1,19 @@
+version: '3'
+services:
+  reservations:
+    build:
+      context: ./reservations
+    ports:
+      - "3000:3000"
+
+  billing:
+    build:
+      context: ./billing
+    ports:
+      - "3001:3001"
+
+  products:
+    build:
+      context: ./products
+    ports:
+      - "3002:30002"
